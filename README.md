@@ -1,2 +1,4 @@
 # MyCSS
-Proyecto de CSS
+Mi Proyecto de CSS
+
+A continuación se numera ... lo que sea xD. etc.
