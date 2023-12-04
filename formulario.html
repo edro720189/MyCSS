@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Formulario estilo Apple</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    body {
+        display: grid;
+        background-color: rgb(27, 27, 27);
+        color: rgb(220, 220, 220);
+        font-family: 'San Francisco', sans-serif;
+        margin: 0px;
+        padding: 0px;
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas con el mismo tamaño */
+        grid-template-rows: auto; /* Altura automática para las filas */
+        gap: 10px; /* Espacio entre celdas */
+    }
+
+    .b {
+        font-family: 'San Francisco', sans-serif;
+        font-size: 14px;
+    }
+
+    .p{
+        font-family: 'San Francisco', sans-serif;
+        margin-top: 10px;
+        padding: 0;
+        padding: 0px;
+        font-size: 13px;
+    }
+    
+    .a{
+        font-family: 'San Francisco', sans-serif;
+        color: rgb(8, 104, 222);
+        margin-top: 20px;
+        margin-left: 100px;
+        margin-bottom: 15px;
+        padding: 0px;
+        font-size: 13px;
+    }
+
+    a:hover,
+    a:visited,
+    a::before,
+    a::after{
+        color: rgb(8, 104, 222);
+        text-decoration: none; /* Sin subrayado */
+    }
+
+    .columna {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+    }
+    .celda {
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+    }
+
+    .custom-container {
+      width: 500px; /* Establece un ancho fijo para el contenedor */
+      height: 265px; /* Establece una altura fija para el contenedor */
+      margin: 0 auto; /* Centra el contenedor en la página */
+    }
+
+    .custom-column {
+      height: 100%; /* Haz que las columnas ocupen toda la altura del contenedor */
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+    }
+
+    .imagen{
+        width: 50px;
+        height: 50px;
+    }
+
+    .contenedor-imagen {
+        display: flex;
+        margin-top: 25px;
+        margin-left: 25px;
+        margin-right: 21px;
+    }
+
+    .contenedor-formulario {
+      margin-right: 60px; /* Alinea a 60px del borde derecho */
+    }
+
+    .contenedor-formulario label, .contenedor-formulario input {
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+
+    .contenedor-formulario div {
+      display: flex;
+      justify-content: right;
+    }
+
+    .contenedor-formulario input {
+      width: 205px;
+      height: 15px;
+      color: #ffff;
+    }
+
+    .contenedor-texto {
+        display: flex;
+        margin-left: 21px;
+    }
+
+    .texto-derecha {
+      margin-left: 21px;
+    }
+
+    .contenedor-botones {
+      display: flex;
+      justify-content: flex-end;
+      margin-left: 265px;
+      margin-bottom: 22px;
+      margin-right: 10px;
+    }
+
+    .contenedor-botones button {
+      margin-right: 14px;
+    }
+
+    #miModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px; /* Ancho del modal */
+      height: 265px; /* Altura del modal */
+      background-color: rgb(27, 27, 27);
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .input{
+      background-color: rgb(31, 31, 31);
+      border-radius: 2px;
+      border-color: rgb(67, 67, 67);
+      border-top: 2px;
+    }
+
+    .modal-content {
+        display: flex;
+        padding: 0px;
+        box-sizing: border-box;
+        grid-template-rows: auto;
+    }
+
+    #btnAbrirModal {
+      margin: 20px;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+
+    #btnCerrarModal {
+      cursor: pointer;
+      background-color: rgb(84, 84, 84);
+      color: rgb(220, 220, 220);
+      border: none;
+      border-radius: 6px;
+      width: 100px;
+      height: 20px;
+    }
+
+    #btnEnviarForm {
+      cursor: pointer;
+      background-color: rgb(84, 84, 84);
+      color: rgb(220, 220, 220);
+      border: none;
+      border-radius: 6px;
+      width: 100px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+    
+    <div class="columna">
+        <h2>Columna 1</h2>
+        <p>Contenido de la columna 1.</p>
+      </div>
+    
+      <div class="columna">
+        <h2>Columna 2</h2>
+        <p>Contenido de la columna 2.</p>
+      </div>
+    
+      <div class="columna">
+        <h2>Columna 3</h2>
+        <p>Contenido de la columna 3.</p>
+      </div>
+      <div class="celda">Celda 1</div>
+      <div class="celda">Celda 2</div>
+      <div class="celda">Celda 3</div>
+      <div class="celda">Celda 4</div>
+      <div class="celda">Celda 5</div>
+      <div class="celda">Celda 6</div>
+</div>
+<button id="btnAbrirModal">Iniciar Sesión</button>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Columna 1</h5>
+            <p class="card-text">Contenido de la columna 1.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Columna 2</h5>
+            <p class="card-text">Contenido de la columna 2.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Columna 3</h5>
+            <p class="card-text">Contenido de la columna 3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        <div class="celda">Celda 1</div>
+        <div class="celda">Celda 2</div>
+        <div class="celda">Celda 3</div>
+        <div class="celda">Celda 4</div>
+        <div class="celda">Celda 5</div>
+        <div class="celda">Celda 6</div>
+
+
+
+        <div class="container custom-container">
+            <div class="row">
+              <div class="col-sm-4 custom-column">
+                <h2>Columna JAjajajajaj</h2>
+                <p>Container custom-container.</p>
+              </div>
+              <div class="col-sm-4 custom-column">
+                <h2>Columna 2</h2>
+                <p>Contenido de la columna 2.</p>
+              </div>
+              <div class="col-sm-4 custom-column">
+                <h2>Columna 3</h2>
+                <p>Contenido de la columna 3.</p>
+              </div>
+            </div>
+          </div>
+
+        <div id="miModal">
+            <div class="modal-content">
+                <form method="get" action="">
+                    <div class="contenedor-imagen">
+                        <img src="appletv.png" class="imagen" alt="appletv">
+                        <div class="contenedor-texto">
+                            <div class="">
+                                <b class="b">Inicia sesión para ver tus datos.</b>
+                                <p class="p">Si tienes un Apple ID, utilízalo para iniciar sesión aquí. Si has utilizado anteriormente iTunes Store o iCloud, por ejemplo, ya tienes un Apple ID.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor-formulario">
+                        <div>
+                          <label for="" class="">Apple ID:</label>
+                          <input type="text" class="input" name="" id="" placeholder="Obligatoria" required>
+                      </div>
+                        <div>
+                            <label for="" class="">Contraseña:</label>
+                            <input type="password" class="input" name="" id="" placeholder="Obligatoria" required>
+                        </div>
+                    </div>
+                    <div class="a">
+                      <a href="">¿Olvidaste tu Apple ID o contraseña?</a>
+                    </div>
+                        <div class="contenedor-botones">
+                            <button id="btnCerrarModal">Cancelar</button>
+                            <button type="" class="" id="btnEnviarForm">Iniciar Sesión</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+
+          <script>
+            var modal = document.getElementById("miModal");
+            var btnAbrirModal = document.getElementById("btnAbrirModal");
+            var btnCerrarModal = document.getElementById("btnCerrarModal");
+        
+            btnAbrirModal.onclick = function() {
+              modal.style.display = "block";
+            }
+        
+            btnCerrarModal.onclick = function() {
+              modal.style.display = "none";
+            }
+        
+            // Cierra el Formulario
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+          </script>
+</body>
+</html>
+<!--
+    Proceso de creacion de formulario
+SNFS Display
+
+
+-->
